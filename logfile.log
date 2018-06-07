@@ -483,3 +483,7 @@
 {"level":"info","message":"Connected to mongodb://localhost/vidly...","timestamp":"2018-06-07T08:49:19.980Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2018-06-07T08:50:06.778Z"}
 {"level":"info","message":"Connected to mongodb://localhost/vidly...","timestamp":"2018-06-07T08:50:07.864Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-06-07T10:02:18.601Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-06-07T10:03:08.132Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-06-07T10:03:31.529Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly...","timestamp":"2018-06-07T10:03:32.572Z"}
