@@ -4,12 +4,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "ng": "ng",
     "start": "node index.js",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "postinstall": "ng build --aot -prod"
   },
   "dependencies": {
     "@agm/core": "^1.0.0-beta.2",
