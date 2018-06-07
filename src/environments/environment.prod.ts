@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
-  domainUrl: 'http://localhost:3000/',
-  apiBaseUrl: 'http://localhost:3000/',
-  apiSpaBaseUrl: 'http://localhost:3000/',
+  domainUrl: 'https://mean-angular4-dashbaord.herokuapp.com/',
+  apiBaseUrl: 'https://mean-angular4-dashbaord.herokuapp.com/',
+  apiSpaBaseUrl: 'https://mean-angular4-dashbaord.herokuapp.com/',
 
   // PAM
   maxActiveConnections: 3,
