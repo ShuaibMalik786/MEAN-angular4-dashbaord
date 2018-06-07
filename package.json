@@ -4,8 +4,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "ng build --aot -prod"
+    "start": "node index.js"
   },
   "dependencies": {
     "@agm/core": "^1.0.0-beta.2",
