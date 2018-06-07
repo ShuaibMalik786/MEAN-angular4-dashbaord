@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
-  domainUrl: 'https://newsapi.org',
-  apiBaseUrl: 'https://newsapi.org/v2/',
-  apiSpaBaseUrl: 'https://newsapi.org/v2/',
+  domainUrl: 'http://localhost:3000',
+  apiBaseUrl: 'http://localhost:3000',
+  apiSpaBaseUrl: 'http://localhost:3000',
 
   // PAM
   maxActiveConnections: 3,

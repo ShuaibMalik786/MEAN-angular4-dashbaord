@@ -14,6 +14,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'user',
+    loadChildren: 'app/admin/core/admin.module#AdminModule'
+  },
+  {
     path: 'admin',
     loadChildren: 'app/admin/admin-dashboard/admin-dashboard.module#AdminDashboardModule'
   },

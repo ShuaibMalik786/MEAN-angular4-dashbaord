@@ -8,7 +8,7 @@
                 <img src="assets/images/default/profile-picture.jpg" class="img-circle sidebar-img" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>John Doe</p>
+                <p>{{user?.name ?  user?.name :'User'}}</p>
                 <a routerLink="/admin/profile">Profile</a>
             </div>
         </div>

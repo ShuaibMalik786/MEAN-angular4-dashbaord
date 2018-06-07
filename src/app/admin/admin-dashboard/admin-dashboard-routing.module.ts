@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuard } from '../../shared/guards/auth-guard.service';
 
 import { DefaultConstant } from '../../shared/constants/default-constant';
 
@@ -27,6 +27,7 @@ import { UiComponentsComponent } from './ui-components/ui-components.component';
 const routes: Routes = [
   {
     path: '',
+    canActivateChild: [AuthGuard],
     component: AdminDashboardComponent,
     data: { title: `Admin Dashboard | ${siteName}` },
     children: [
@@ -60,7 +61,9 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: []
+  providers: [
+    AuthGuard
+  ]
 })
 export class AdminDashboardRoutingModule {
 }

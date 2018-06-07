@@ -7,6 +7,7 @@ import { DefaultConstant } from '../../shared/constants/default-constant';
 
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const siteName = DefaultConstant.SITE_NAME;
 
@@ -21,6 +22,11 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent,
         data: { title: `Admin Login | ${siteName}` }
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        data: { title: `Admin Register | ${siteName}` }
       },
     ]
   },

@@ -1,0 +1,36 @@
+<div class="login-form admin-login">
+    <div class="login-form__header">
+        <div class="icon-circle">
+            <i class="fa fa-user fa-2x center-it"></i>
+        </div>
+        <label>Register</label>
+    </div>
+    <div class="login-form__body">
+        <form [formGroup]="form.getForm()" (ngSubmit)="onFormSubmit()">
+
+            <div class="form-group" [ngClass]="form.hasError('name') ? 'has-error': ''">
+                <input type="name" formControlName="name" class="form-control" placeholder="Enter name">
+                <span class="help-block" *ngIf="form.hasError('name')">
+          {{ form.getError('name') }}
+        </span>
+            </div>
+
+            <div class="form-group" [ngClass]="form.hasError('email') ? 'has-error': ''">
+                <input type="email" formControlName="email" class="form-control" placeholder="Enter Email">
+                <span class="help-block" *ngIf="form.hasError('email')">
+          {{ form.getError('email') }}
+        </span>
+            </div>
+
+            <div class="form-group" [ngClass]="form.hasError('password') ? 'has-error': ''">
+                <input type="password" formControlName="password" class="form-control" placeholder="Enter Password">
+                <span class="help-block" *ngIf="form.hasError('password')">
+          {{ form.getError('password') }}
+        </span>
+            </div>
+
+            <button #submit type="submit" class="btn btn-hl full-width input-md">Register</button>
+
+        </form>
+    </div>
+</div>

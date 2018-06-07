@@ -14,7 +14,6 @@ export class NewsHeadlinesComponent implements OnInit {
   loading: boolean;
   paginationMeta: PaginationMeta;
   httpParams: object = {
-    apiKey: '0d242696694c489ebccfad34c50c5f4d',
     country: 'us'
   };
 

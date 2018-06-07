@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { NgSelect2Module } from 'ng-select2';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
-import { NgDatepickerModule } from 'ng2-datepicker';
 
 import { AdminDashboardRoutingModule } from './admin-dashboard-routing.module';
 import { SharedModule } from '../../shared/shared.module';
@@ -60,7 +59,6 @@ import { UiComponentsComponent } from './ui-components/ui-components.component';
     FormsModule,
     ReactiveFormsModule,
     NgSelect2Module,
-    NgDatepickerModule,
     ToastModule.forRoot()
   ]
 })

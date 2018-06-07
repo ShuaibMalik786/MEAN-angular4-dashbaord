@@ -7,11 +7,13 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,

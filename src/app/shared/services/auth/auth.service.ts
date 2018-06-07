@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { JwtHelper } from 'angular2-jwt';
 import { Subject } from 'rxjs/Subject';
 import * as _ from 'lodash';
 
@@ -23,7 +23,8 @@ export class AuthService {
   userLoggedIn = new Subject<User>();
   userUpdated = new Subject<User>();
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService,
+              private router: Router) {
   }
 
   // API Calls
@@ -53,7 +54,7 @@ export class AuthService {
   }
 
   loginAdmin(data: object) {
-    const loginUrl = ApiHelperService.getSpaApiUrl('admin/login');
+    const loginUrl = ApiHelperService.getSpaApiUrl('auth');
     return this.apiService.post(loginUrl, data);
   }
 
@@ -84,7 +85,7 @@ export class AuthService {
   }
 
   registerUser(data: object) {
-    const apiUrl = ApiHelperService.getApiUrl('user/register');
+    const apiUrl = ApiHelperService.getApiUrl('users');
     return this.apiService.post(apiUrl, data);
   }
 
@@ -194,7 +195,7 @@ export class AuthService {
   // Helper Methods
 
   isUserLoggedIn(): boolean {
-    return !!LocalStorageService.get(StorageConstant.LOGGED_IN);
+    return !!LocalStorageService.get('token');
   }
 
   setLoggedInUser(user: any) {
@@ -213,8 +214,10 @@ export class AuthService {
     this.userUpdated.next({} as User);
   }
 
-  getUser(): User {
-    return LocalStorageService.get(StorageConstant.LOGGED_IN_USER) as User;
+  getUser() {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+    return new JwtHelper().decodeToken(token);
   }
 
   getUserId(): number {
@@ -307,9 +310,10 @@ export class AuthService {
   }
 
   logoutAndFlushUser() {
-    this.logout().subscribe();
-    this.flushUser();
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/user');
   }
+
 
   flushUserAndRedirect(router: Router, loginUrl: string, redirectUrl: string = null) {
     this.flushUser();
@@ -328,8 +332,6 @@ export class AuthService {
 
   clearAuthStorageItems() {
     this.clearLoggedInUser();
-    CorporateHelper.clearInfo();
-    PamHelper.clearInfo();
   }
 
   isAllowedHotelBooking() {
