@@ -1,14 +1,10 @@
 {
-  "name": "Angular-dashbaord",
+  "name": "Mean-Angular4-dashbaord",
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "ng": "ng",
     "start": "node index.js",
-    "build": "ng build",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod"
   },
   "dependencies": {
